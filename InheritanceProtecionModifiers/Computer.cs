@@ -10,27 +10,45 @@ namespace InheritanceProtecionModifiers
     //Type of Techonology to confirgure
     public abstract class Computer
     {
-            //Setup Configuration variables
-        protected String _TechnologyChoosen = "Computer";
-        protected String _Brand;
-        protected double _Version;
-        protected double _Budget;
+        //Setup Configuration variables
+        private String technologyChoosen = "Computer";
+        private String brand;
+        private double version;
+        private double budget;
+        private string buildConfigurationString;
+        //Create a string used to keep track of the Computer build config
+       
 
-            //Create a string used to keep track of the Computer build config
-        protected string BuildConfigurationString;
+ 
 
+        public Computer()
+        {
+        }
 
+        public string Brand { get => brand; set => brand = value; }
+        public string TechnologyChoosen { get => technologyChoosen; set => technologyChoosen = value; }
+        public double Version { get => version; set => version = value; }
+        public double Budget { get => budget; set => budget = value; }
 
+        public string BuildConfigurationString { get => buildConfigurationString; set => buildConfigurationString = value; }
     }
 
     // Combines all information for processing and printing the order 
     // to screen for a PC build
     public class PcBuild : Computer
     {
-        protected string ComputerType = "PC";
+
+
+        protected string _ComputerType = "PC";
+
+        public PcBuild(string ComputerType)
+        {
+            _ComputerType = ComputerType;
+        }
+
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
-            BuildConfigurationString = SavedConfigText;
+            BuildConfigurationString = BuildConfigurationString + ", " +SavedConfigText;
         }
 
 
@@ -41,22 +59,18 @@ namespace InheritanceProtecionModifiers
         }
 
         //Notifies the user of the Current status of their order
-        public void CurrentStatus()
+        public string CurrentStatus()
         {
-            if (BuildConfigurationString != "")
+            if (BuildConfigurationString == "" || BuildConfigurationString == null)
             {
-                System.Windows.Forms.MessageBox.Show("Your " + ComputerType + " order has been received and is currently being shipped!");
+                
+                return "We are still waiting on your " + _ComputerType + " parts selection";
             }
             else {
-                System.Windows.Forms.MessageBox.Show("We are still waiting on your " + ComputerType + " parts selection");
+                return "Your " + _ComputerType + " order has been received and is currently being shipped!" + "\n" + BuildConfigurationString;
             }
             
         }
-    }
-
-    public class MacBuild : PcBuild
-    {
-         protected new string ComputerType = "Mac";
     }
 
 
