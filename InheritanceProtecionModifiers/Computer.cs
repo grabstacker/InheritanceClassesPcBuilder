@@ -11,22 +11,14 @@ namespace InheritanceProtecionModifiers
     public abstract class Computer
     {
         //Setup Configuration variables
-        private String technologyChoosen = "Computer";
+
         private String brand;
         private double version;
         private double budget;
         private string buildConfigurationString;
         //Create a string used to keep track of the Computer build config
-       
-
- 
-
-        public Computer()
-        {
-        }
 
         public string Brand { get => brand; set => brand = value; }
-        public string TechnologyChoosen { get => technologyChoosen; set => technologyChoosen = value; }
         public double Version { get => version; set => version = value; }
         public double Budget { get => budget; set => budget = value; }
 
