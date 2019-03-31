@@ -48,16 +48,16 @@ namespace InheritanceProtecionModifiers
                 //assigns all of the values to the object which inherits from the Computer Class
                 newBuild.ConfigurationBuildAdd(newBuild.ComputerType);
 
-                newBuild.Brand = txtBrand.Text;
+                newBuild.brand = txtBrand.Text;
                 newBuild.ConfigurationBuildAdd(txtBrand.Text);
 
-                newBuild.Version = Convert.ToDouble(txtVersion.Text);
+                newBuild.version = Convert.ToDouble(txtVersion.Text);
                 newBuild.ConfigurationBuildAdd(txtVersion.Text);
 
-                newBuild.Budget = Convert.ToDouble(txtBudget.Text);
+                newBuild.budget = Convert.ToDouble(txtBudget.Text);
                 newBuild.ConfigurationBuildAdd(txtBudget.Text);
 
-                txtBuildInfo.Text = newBuild.BuildConfigurationString;
+                txtBuildInfo.Text = newBuild.buildConfigurationString;
             }
         }
 

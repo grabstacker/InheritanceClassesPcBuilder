@@ -11,17 +11,18 @@ namespace InheritanceProtecionModifiers
     public abstract class Computer
     {
         //Setup Configuration variables
-        private String brand;
-        private double version;
-        private double budget;
+        public string brand { get; set; }
+        
+        public double version { get; set; }
+      
+        public double budget { get; set; }
         //Create a string used to keep track of the Computer build config
-        private string buildConfigurationString;
+        public string buildConfigurationString { get; set; }
+    
 
         //Getters and Setters
-        public string Brand { get => brand; set => brand = value; }
-        public double Version { get => version; set => version = value; }
-        public double Budget { get => budget; set => budget = value; }
-        public string BuildConfigurationString { get => buildConfigurationString; set => buildConfigurationString = value; }
+
+        
     }
 
     // Combines all information for processing and printing the order 
@@ -43,26 +44,26 @@ namespace InheritanceProtecionModifiers
         //Adds to the Configuration string in inheriated Computer class
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
-            BuildConfigurationString = BuildConfigurationString + SavedConfigText + ". \n ";
+            buildConfigurationString = buildConfigurationString + SavedConfigText + ". \n ";
         }
 
 
         //Prints the entire Configuration to screen
         public void ConfigfurationPrint()
         {
-            System.Windows.Forms.MessageBox.Show(BuildConfigurationString);
+            System.Windows.Forms.MessageBox.Show(buildConfigurationString);
         }
 
         //Notifies the user of the Current status of their order
         public string CurrentStatus()
         {
-            if (BuildConfigurationString == "" || BuildConfigurationString == null)
+            if (buildConfigurationString == "" || buildConfigurationString == null)
             {
                 
                 return "We are still waiting on your " + ComputerType + " parts selection";
             }
             else {
-                return "Your " + ComputerType + " order has been received and is currently being shipped! " + "\n" + BuildConfigurationString;
+                return "Your " + ComputerType + " order has been received and is currently being shipped! " + "\n" + buildConfigurationString;
             }
             
         }
