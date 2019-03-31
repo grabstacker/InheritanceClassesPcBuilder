@@ -14,7 +14,7 @@ namespace InheritanceProtecionModifiers
     {
         //Creates a new PcBuild which inherits from the Computer class all of the private variables through setters and getters
         PcBuild newBuild = new PcBuild();
-
+        public int dotCount = 0;
         public btnStatus()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace InheritanceProtecionModifiers
         //submiit button which checks for vaild info and sets the object data
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+
             if (txtBrand.Text == "" || txtVersion.Text == "" || txtBudget.Text == "")
             {
                 MessageBox.Show("Please enter the required information");
@@ -66,5 +66,32 @@ namespace InheritanceProtecionModifiers
         {
             txtCurrentStatus.Text = newBuild.CurrentStatus();
         }
+
+        private void txtVersion_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        //check for double 
+        private void txtBrand_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formatting(sender,e);
+        }
+        private void txtBudget_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formatting(sender, e);
+        }
+
+
+
+        //Formatting method to check for double in both Brand and Version
+        public void formatting(object sender, KeyPressEventArgs e)
+        {
+  
+        }
+
+ 
     }
-}
+    }
+

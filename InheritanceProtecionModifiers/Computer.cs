@@ -52,7 +52,7 @@ namespace InheritanceProtecionModifiers
 
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
-            BuildConfigurationString = BuildConfigurationString + ", " +SavedConfigText;
+            BuildConfigurationString = BuildConfigurationString + SavedConfigText + ". \n ";
         }
 
 
@@ -71,7 +71,7 @@ namespace InheritanceProtecionModifiers
                 return "We are still waiting on your " + ComputerType + " parts selection";
             }
             else {
-                return "Your " + ComputerType + " order has been received and is currently being shipped!" + "\n" + BuildConfigurationString;
+                return "Your " + ComputerType + " order has been received and is currently being shipped! " + "\n" + BuildConfigurationString;
             }
             
         }
