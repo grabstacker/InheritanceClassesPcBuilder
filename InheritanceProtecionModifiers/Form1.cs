@@ -43,6 +43,7 @@ namespace InheritanceProtecionModifiers
             else
             {
                 
+                //assigns all of the values to the object which inherits from the Computer Class
                 newBuild.Brand = txtBrand.Text;
                 newBuild.ConfigurationBuildAdd(txtBrand.Text);
 
