@@ -39,12 +39,16 @@ namespace InheritanceProtecionModifiers
     {
 
 
-        protected string _ComputerType = "PC";
+        private string computerType;
+        public string ComputerType { get => computerType; set => computerType = value; }
 
-        public PcBuild(string ComputerType)
+
+        public PcBuild()
         {
-            _ComputerType = ComputerType;
+            computerType = "PC";
         }
+
+
 
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
@@ -64,10 +68,10 @@ namespace InheritanceProtecionModifiers
             if (BuildConfigurationString == "" || BuildConfigurationString == null)
             {
                 
-                return "We are still waiting on your " + _ComputerType + " parts selection";
+                return "We are still waiting on your " + ComputerType + " parts selection";
             }
             else {
-                return "Your " + _ComputerType + " order has been received and is currently being shipped!" + "\n" + BuildConfigurationString;
+                return "Your " + ComputerType + " order has been received and is currently being shipped!" + "\n" + BuildConfigurationString;
             }
             
         }

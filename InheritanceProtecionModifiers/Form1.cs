@@ -13,7 +13,7 @@ namespace InheritanceProtecionModifiers
     public partial class btnStatus : Form
     {
         //Creates a new PcBuild which inherits from the Computer class all of the private variables through setters and getters
-        PcBuild newBuild = new PcBuild("PC");
+        PcBuild newBuild = new PcBuild();
 
         public btnStatus()
         {
@@ -24,11 +24,13 @@ namespace InheritanceProtecionModifiers
         private void chkPC_CheckedChanged(object sender, EventArgs e)
         {
             chkMac.Checked = false;
+            newBuild.ComputerType = "PC";
         }
 
         private void chkMac_CheckedChanged(object sender, EventArgs e)
         {
             chkPC.Checked = false;
+            newBuild.ComputerType = "Mac";
         }
 
 
@@ -42,8 +44,10 @@ namespace InheritanceProtecionModifiers
             }
             else
             {
-                
+
                 //assigns all of the values to the object which inherits from the Computer Class
+                newBuild.ConfigurationBuildAdd(newBuild.ComputerType);
+
                 newBuild.Brand = txtBrand.Text;
                 newBuild.ConfigurationBuildAdd(txtBrand.Text);
 
