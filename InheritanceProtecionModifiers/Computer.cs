@@ -11,17 +11,16 @@ namespace InheritanceProtecionModifiers
     public abstract class Computer
     {
         //Setup Configuration variables
-
         private String brand;
         private double version;
         private double budget;
-        private string buildConfigurationString;
         //Create a string used to keep track of the Computer build config
+        private string buildConfigurationString;
 
+        //Getters and Setters
         public string Brand { get => brand; set => brand = value; }
         public double Version { get => version; set => version = value; }
         public double Budget { get => budget; set => budget = value; }
-
         public string BuildConfigurationString { get => buildConfigurationString; set => buildConfigurationString = value; }
     }
 
@@ -30,18 +29,18 @@ namespace InheritanceProtecionModifiers
     public class PcBuild : Computer
     {
 
-
+        //Class variable for computer type
         private string computerType;
+        //Geter seter ComputerType
         public string ComputerType { get => computerType; set => computerType = value; }
 
-
+        //Construtor for new Pc
         public PcBuild()
         {
             computerType = "PC";
         }
 
-
-
+        //Adds to the Configuration string in inheriated Computer class
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
             BuildConfigurationString = BuildConfigurationString + SavedConfigText + ". \n ";
