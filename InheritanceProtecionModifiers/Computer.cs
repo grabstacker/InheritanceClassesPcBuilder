@@ -17,7 +17,7 @@ namespace InheritanceProtecionModifiers
       
         public double budget { get; set; }
         //Create a string used to keep track of the Computer build config
-        public string buildConfigurationString { get; set; }
+       public StringBuilder buildConfigurationString = new StringBuilder();
     
 
         //Getters and Setters
@@ -44,20 +44,20 @@ namespace InheritanceProtecionModifiers
         //Adds to the Configuration string in inheriated Computer class
         public void ConfigurationBuildAdd(string SavedConfigText)
         {
-            buildConfigurationString = buildConfigurationString + SavedConfigText + ". \n ";
+             buildConfigurationString.Append(SavedConfigText + ". \n ");
         }
 
 
         //Prints the entire Configuration to screen
         public void ConfigfurationPrint()
         {
-            System.Windows.Forms.MessageBox.Show(buildConfigurationString);
+            System.Windows.Forms.MessageBox.Show(buildConfigurationString.ToString());
         }
 
         //Notifies the user of the Current status of their order
         public string CurrentStatus()
         {
-            if (buildConfigurationString == "" || buildConfigurationString == null)
+            if (buildConfigurationString.ToString() == "" || buildConfigurationString == null)
             {
                 
                 return "We are still waiting on your " + ComputerType + " parts selection";

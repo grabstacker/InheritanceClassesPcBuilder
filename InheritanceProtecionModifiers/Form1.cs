@@ -14,7 +14,7 @@ namespace InheritanceProtecionModifiers
     {
         //Creates a new PcBuild which inherits from the Computer class all of the private variables through setters and getters
         PcBuild newBuild = new PcBuild();
-        public int dotCount = 0;
+       
         public btnStatus()
         {
             InitializeComponent();
@@ -57,7 +57,7 @@ namespace InheritanceProtecionModifiers
                 newBuild.budget = Convert.ToDouble(txtBudget.Text);
                 newBuild.ConfigurationBuildAdd(txtBudget.Text);
 
-                txtBuildInfo.Text = newBuild.buildConfigurationString;
+                txtBuildInfo.Text = newBuild.buildConfigurationString.ToString();
             }
         }
 
